@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="liveearthquakeindonesia",
-    version="0.3",
+    version="0.4",
     author="Rizal Mustofa",
     author_email="rizalmustofa31@gmail.com",
     description="The package will get the latest earthquake from BMKG",

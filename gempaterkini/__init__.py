@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-import gempaterkini
+description = 'To get the latest earthquake in Indonesia from BMKG.go.id'
 
 
 def ekstrasi_data():
@@ -81,5 +81,6 @@ def tampilkan_data(result):
     print(f"Keterangan: {result['keterangan']}")
 
 if __name__ == '__main__':
+    print('Deskripsi package', description)
     result = ekstrasi_data()
     tampilkan_data(result)
