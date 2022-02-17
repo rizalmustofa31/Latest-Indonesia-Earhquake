@@ -1,10 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
-
+"""
+Method = fungsi
+Field / Atribute = variabel
+"""
 class gempaterkini:
-    def __init__(self):
+    def __init__(self, url):
         self.description = 'To get the latest earthquake in Indonesia from BMKG.go.id'
         self.result = None
+        self.url = url
 
     def ekstrasi_data(self):
         """
@@ -18,7 +22,7 @@ class gempaterkini:
         :return:
         """
         try:
-            content = requests.get('https://bmkg.go.id')
+            content = requests.get(self.url)
         except Exception:
             return None
 
@@ -87,8 +91,12 @@ class gempaterkini:
         self.tampilkan_data()
 
 if __name__ == '__main__':
-    gempa_di_indonesia = gempaterkini()
-    print('Deskripsi package', gempa_di_indonesia.description)
+    gempa_di_indonesia = gempaterkini('https://bmkg.go.id')
+    print('Deskripsi class gempaterkini', gempa_di_indonesia.description)
     gempa_di_indonesia.run()
+
+    gempa_di_dunia = gempaterkini('https://bmkg.go.id')
+    print('Deskripsi class gempaterkini', gempa_di_dunia.description)
+    gempa_di_dunia.run()
     # gempa_di_indonesia.ekstrasi_data()
     # gempa_di_indonesia.tampilkan_data()
